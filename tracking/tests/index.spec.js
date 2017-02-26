@@ -12,9 +12,9 @@ describe('Routes', function () {
       chai.request(server)
         .get('/tracking')
         .end(function (err, res) {
-            expect(err).to.not.be.null;
-            expect(res).to.have.status(500);
-            expect(res.text).to.equal('Internal server error: Incorrect query params provided: {}');
+          expect(err).to.not.be.null;
+          expect(res).to.have.status(500);
+          expect(res.text).to.equal('Internal server error: Incorrect query params provided: {}');
           done();
         });
     });

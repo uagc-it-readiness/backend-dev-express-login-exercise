@@ -35,5 +35,6 @@ app.post('/', function (req, res, next) {
 });
 
 app.use(errMiddleware);
-
 app.listen(3003);
+
+module.exports = app;
