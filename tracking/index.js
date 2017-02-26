@@ -7,7 +7,7 @@ var app = express();
 var trackingCache = {};
 
 app.get('/tracking', function (req, res, next) {
-  if (!req.query.username || !req.query.currentDate) {
+  if (!req.query || !req.query.username || !req.query.currentDate) {
     next('Incorrect query params provided: ' + JSON.stringify(req.query));
   }
   
@@ -29,5 +29,6 @@ app.get('/tracking', function (req, res, next) {
 });
 
 app.use(errMiddleware);
-
 app.listen(3002);
+
+module.exports = app;
